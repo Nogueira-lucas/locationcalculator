@@ -12,14 +12,16 @@ import com.google.maps.DistanceMatrixApi;
 @Component
 public class GeocodingGoogleService {
 
-    private GeoApiContext context;
-    private String apiKey = ${googleKey};
+    private final GeoApiContext context;
+
+    @Value("${spring.datasource.googleKey}")
+    private final String apiKey;
 
     public GeocodingGoogleService() {
         this.context = new GeoApiContext.Builder().apiKey(apiKey).build();
     }
 
-    public DistanceMatrix getDistanceFromLocations(String origin, String destiny) throws Exception {
+    public DistanceMatrix getDistanceFromLocations(String origin, String destiny) {
         try {
             DistanceMatrixApiRequest api = DistanceMatrixApi.newRequest(context);
             return api.origins(origin)
