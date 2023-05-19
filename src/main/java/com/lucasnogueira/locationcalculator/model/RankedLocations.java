@@ -1,4 +1,4 @@
-package model;
+package com.lucasnogueira.locationcalculator.model;
 
 import com.google.maps.model.DistanceMatrix;
 import lombok.AllArgsConstructor;

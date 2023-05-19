@@ -3,9 +3,8 @@ package com.lucasnogueira.locationcalculator.facade;
 import com.google.gson.Gson;
 import com.lucasnogueira.locationcalculator.services.GeocodingGoogleService;
 import lombok.Data;
-import model.CoupleDescription;
-import model.OrderEnum;
-import model.RankedLocations;
+import com.lucasnogueira.locationcalculator.model.*;
+import com.lucasnogueira.locationcalculator.model.OrderEnum;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -13,6 +12,7 @@ import com.google.maps.model.DistanceMatrix;
 
 import java.util.*;
 import java.util.stream.Collectors;
+
 
 @Component
 @Data

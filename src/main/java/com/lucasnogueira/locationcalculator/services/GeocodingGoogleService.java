@@ -5,6 +5,7 @@ import com.google.maps.GeoApiContext;
 import com.google.maps.errors.ApiException;
 import com.google.maps.model.DistanceMatrix;
 import com.google.maps.model.TravelMode;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import com.google.maps.DistanceMatrixApi;
@@ -14,8 +15,8 @@ public class GeocodingGoogleService {
 
     private final GeoApiContext context;
 
-    @Value("${spring.datasource.googleKey}")
-    private final String apiKey;
+    @Value("${spring.tokenAPI}")
+    private String apiKey;
 
     public GeocodingGoogleService() {
         this.context = new GeoApiContext.Builder().apiKey(apiKey).build();
